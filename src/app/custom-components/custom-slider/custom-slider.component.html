@@ -7,6 +7,7 @@
     [max]="+upperRange"
     steps="1"
     (input)="onSlide($event, slider)"
+    (blur)="onBlur()"
     [value]="lowerRange ? lowerRange : 0"
     #slider
   />

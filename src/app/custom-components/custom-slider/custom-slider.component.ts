@@ -45,6 +45,12 @@ export class CustomSliderComponent implements OnInit, ControlValueAccessor {
     const sliderColor = `linear-gradient(to right, #663399 ${selectionPercentage}%, #dfc4f1 ${selectionPercentage}%)`;
 
     inputElement.style.backgroundImage = sliderColor;
+
+    this.onChange(this.selectedValue);
+  }
+
+  onBlur() {
+    this.onTouched();
   }
 
   registerOnChange(fn: any) {
