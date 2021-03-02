@@ -9,12 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { CustomSliderComponent } from './custom-slider/custom-slider.component';
-import { CustomSelectorComponent } from './custom-selector/custom-selector.component';
-import { CustomToggleSwitchComponent } from './custom-toggle-switch/custom-toggle-switch.component';
-import { CustomInputComponent } from './custom-input/custom-input.component';
+import { CustomSliderComponent } from './custom-components/custom-slider/custom-slider.component';
+import { CustomSelectorComponent } from './custom-components/custom-selector/custom-selector.component';
+import { CustomToggleSwitchComponent } from './custom-components/custom-toggle-switch/custom-toggle-switch.component';
+import { CustomInputComponent } from './custom-components/custom-input/custom-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FeatureCardComponent } from './feature-card/feature-card.component';
+import { FeatureCardComponent } from './custom-components/feature-card/feature-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

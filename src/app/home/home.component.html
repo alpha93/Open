@@ -1,29 +1,3 @@
-<header
-  fxLayout="row"
-  fxLayoutAlign="space-between center"
-  [@shrink]="headerState"
->
-  <section class="logo">
-    <img src="../../assets/logo@2x.png" alt="logo" #logo />
-  </section>
-
-  <nav fxLayout="row" fxLayoutAlign="space-bwtween center" fxLayoutGap="50px">
-    <div class="nav-item" *ngFor="let navLink of navLinks">
-      {{ navLink }}
-    </div>
-  </nav>
-
-  <section
-    class="buttons"
-    fxLayout="row"
-    fxLayoutAlign="space-between center"
-    fxLayoutGap="24px"
-  >
-    <button id="login"><span>Login</span></button>
-    <button id="get-started"><span>Get Started</span></button>
-  </section>
-</header>
-
 <!-- <div class="header-shadow"></div> -->
 
 <img class="circle-top-right" src="../../assets/circle.svg" />

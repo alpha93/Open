@@ -65,28 +65,6 @@ button {
   /* background-color: tomato; */
 }
 
-button#login {
-  border: 2px solid #663399;
-  color: #663399;
-  background-color: white;
-  padding: 11px 36px;
-}
-
-button#login:hover {
-  color: white;
-  background-color: #663399;
-}
-
-button#get-started {
-  background: transparent linear-gradient(90deg, #9f62c9 0%, #663399 100%) 0% 0%
-    no-repeat padding-box;
-  color: white;
-}
-
-button#get-started:hover {
-  background: linear-gradient(to right, #663399 100%, #663399);
-}
-
 .circle-top-right {
   position: absolute;
   top: -227.9px;

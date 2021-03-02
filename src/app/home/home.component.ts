@@ -23,53 +23,15 @@ import { Subscription } from 'rxjs';
   selector: 'open-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  animations: [
-    trigger('shrink', [
-      state(
-        'expaned',
-        style({
-          backgroundColor: 'transparent',
-        })
-      ),
-      state(
-        'shrunken',
-        style({
-          backgroundColor: 'white',
-          height: '70px',
-          boxShadow: '0px 0px 10px #00000033',
-        })
-      ),
-      transition('expanded <=> shrunken', [animate('200ms 0s ease-out')]),
-    ]),
-
-    // trigger('shrinkLogo', [
-    //   state(
-    //     'expandedLogo',
-    //     style({
-    //       // transform: 'scale(1)',
-    //     })
-    //   ),
-    //   state(
-    //     'shrunkenLogo',
-    //     style({
-    //       // width: '80px',
-    //       transform: 'scale(.6)',
-    //     })
-    //   ),
-    //   transition('shrunkenLogo <=> expandedLogo', [
-    //     animate('200ms 0s ease-out'),
-    //   ]),
-    // ]),
-  ],
 })
 export class HomeComponent {
   eligibilityForm: FormGroup;
   scrollSubscription: Subscription;
   reachedTop = true;
-  headerState = 'expanded';
+
   logoState = 'expandedLogo';
   triggered = false;
-  navLinks = ['Products', 'Solutions', 'Pricing'];
+
   tenureOptions = [
     '1 Month',
     '2 Months',
@@ -121,36 +83,7 @@ export class HomeComponent {
     },
   ];
 
-  @ViewChild('logo', { static: true })
-  logoRef: ElementRef;
-
-  @HostListener('document:scroll', ['$event'])
-  trgiggerAnimation(event: Event) {
-    console.log(document.documentElement.scrollTop);
-    if (
-      document.documentElement.scrollTop > 0 &&
-      this.headerState === 'expanded'
-    ) {
-      this.renderer.setStyle(
-        this.logoRef.nativeElement,
-        'transform',
-        'scale(.6)'
-      );
-      this.headerState = 'shrunken';
-    } else if (
-      document.documentElement.scrollTop === 0 &&
-      this.headerState === 'shrunken'
-    ) {
-      this.renderer.setStyle(
-        this.logoRef.nativeElement,
-        'transform',
-        'scale(1)'
-      );
-      this.headerState = 'expanded';
-    }
-  }
-
-  constructor(private renderer: Renderer2) {}
+  constructor() {}
 
   ngOnInit(): void {
     // prettier-ignore

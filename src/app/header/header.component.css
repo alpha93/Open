@@ -1,0 +1,84 @@
+header {
+  /* height: 163px; */
+  /* background-color: white; */
+  padding: 0px 120px;
+  /* position: sticky; */
+  top: 0;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 177px;
+}
+
+/* .header-shadow {
+  height: 127px;
+  position: fixed;
+  top: 0;
+  left: 0;
+ 
+  background-color: coral;
+  width: 100%;
+} */
+
+.logo img {
+  width: 123px;
+  transition: all 200ms ease-out;
+}
+
+nav {
+  position: absolute;
+  right: 500px;
+  /* background-color: violet; */
+}
+
+.nav-item {
+  font-size: 25px;
+  font-family: "Open Sans";
+  text-transform: capitalize;
+  letter-spacing: 0px;
+  color: #222222;
+  cursor: pointer;
+  /* font-weight: bold; */
+  /* background-color: turquoise; */
+}
+
+.nav-item:hover {
+  color: #9f62c9;
+}
+
+button {
+  /* height: 45px; */
+  padding: 13px 36px;
+  cursor: pointer;
+  /* box-shadow: 0px 0px 20px #00000033; */
+  border-radius: 24px;
+  opacity: 1;
+  border: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  letter-spacing: 0px;
+  font-family: Montserrat;
+  transition: all 200ms ease-out;
+}
+
+button#login {
+  border: 2px solid #663399;
+  color: #663399;
+  background-color: white;
+  padding: 11px 36px;
+}
+
+button#login:hover {
+  color: white;
+  background-color: #663399;
+}
+
+button#get-started {
+  background: transparent linear-gradient(90deg, #9f62c9 0%, #663399 100%) 0% 0%
+    no-repeat padding-box;
+  color: white;
+}
+
+button#get-started:hover {
+  background: linear-gradient(to right, #663399 100%, #663399);
+}
