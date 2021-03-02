@@ -1,0 +1,32 @@
+<div class="container">
+  <h3>{{ heading }}</h3>
+
+  <div
+    class="selection"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    #slctn
+  >
+    <div class="selected-option" [ngClass]="{ disabled: isDisabled }">
+      {{ selectedOption }}
+    </div>
+    <div class="arrow" #arrow></div>
+  </div>
+
+  <div class="options" #optns>
+    <ng-scrollbar visibility="hover">
+      <div class="option-item" *ngFor="let option of options; index as i">
+        <input
+          type="radio"
+          [id]="i"
+          name="opt"
+          (input)="onSelect(inp)"
+          (blur)="onBlur()"
+          #inp
+          [value]="option"
+        />
+        <label [for]="i">{{ option }}</label>
+      </div>
+    </ng-scrollbar>
+  </div>
+</div>

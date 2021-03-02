@@ -1,0 +1,151 @@
+<header
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  [@shrink]="headerState"
+>
+  <section class="logo">
+    <img src="../../assets/logo@2x.png" alt="logo" #logo />
+  </section>
+
+  <nav fxLayout="row" fxLayoutAlign="space-bwtween center" fxLayoutGap="50px">
+    <div class="nav-item" *ngFor="let navLink of navLinks">
+      {{ navLink }}
+    </div>
+  </nav>
+
+  <section
+    class="buttons"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxLayoutGap="24px"
+  >
+    <button id="login"><span>Login</span></button>
+    <button id="get-started"><span>Get Started</span></button>
+  </section>
+</header>
+
+<!-- <div class="header-shadow"></div> -->
+
+<img class="circle-top-right" src="../../assets/circle.svg" />
+<img class="circle-left" src="../../assets/blob-small.svg" />
+
+<section class="top" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="left-half">
+    <h3>{{ tagLineTopLeft }}</h3>
+    <div class="underline"></div>
+    <div class="page-image"></div>
+  </div>
+
+  <div
+    class="right-half"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxLayoutGap="10px"
+  >
+    <div
+      class="left-panel"
+      fxLayout="column"
+      fxLayoutAlign="space-between stretch"
+      fxLayoutGap="50px"
+    >
+      <h1 fxFlexAlign="center">Eligibility Calculator</h1>
+
+      <form
+        [formGroup]="eligibilityForm"
+        fxLayout="column"
+        fxFlex="1 0 auto"
+        fxLayoutAlign="space-between stretch"
+      >
+        <open-custom-slider
+          [heading]="'Monthly Income'"
+          lowerRange="100000"
+          upperRange="300000"
+          formControlName="monthlyIncome"
+        ></open-custom-slider>
+
+        <open-custom-slider
+          heading="Monthly Expense"
+          [showRanges]="false"
+          formControlName="monthlyExpense"
+        ></open-custom-slider>
+
+        <open-custom-selector
+          heading="Repayment Tenure"
+          [options]="tenureOptions"
+          formControlName="repaymentTenure"
+        ></open-custom-selector>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="loan">
+          <div>Do you have any existing loans?</div>
+          <open-custom-toggle-switch></open-custom-toggle-switch>
+        </div>
+
+        <open-custom-input
+          heading="EMI of existing loan (optional)"
+          formControlName="emi"
+        ></open-custom-input>
+      </form>
+    </div>
+
+    <div
+      class="right-panel"
+      fxLayout="column"
+      fxLayoutAlign="space-evenly center"
+    >
+      <div class="loan-amount">
+        <h3>Loan Amount</h3>
+        <div>&#8377; 1,00,000</div>
+      </div>
+      <div class="emi">
+        <h3>Your EMI will be</h3>
+        <div>&#8377; 15,000</div>
+      </div>
+      <button id="get-money"><span>Get Money</span></button>
+    </div>
+  </div>
+</section>
+
+<img class="dots-right" src="../../assets/accounting_dots.svg" alt="" />
+<img class="dots-left" src="../../assets/accounting_dots.svg" alt="" />
+<img class="wave" src="../../assets/sol_wave_bg.svg" alt="" />
+
+<section class="bottom" fxLayout="row" fxLayoutAlign="start center">
+  <div
+    class="first-col"
+    fxLayout="column"
+    fxLayoutAlign="start center"
+    fxLayoutGap="50px"
+  >
+    <open-feature-card
+      *ngFor="let cardItem of cardData1"
+      height="270px"
+      width="390px"
+      [title]="cardItem.title"
+      [image]="cardItem.image"
+      [description]="cardItem.desc"
+    ></open-feature-card>
+  </div>
+
+  <div
+    class="second-col"
+    fxLayout="column"
+    fxLayoutAlign="start center"
+    fxLayoutGap="50px"
+  >
+    <open-feature-card
+      *ngFor="let cardItem of cardData2"
+      height="270px"
+      width="390px"
+      [title]="cardItem.title"
+      [image]="cardItem.image"
+      [description]="cardItem.desc"
+    ></open-feature-card>
+  </div>
+
+  <div class="third-col" fxLayout="column" fxLayoutAlign="start start">
+    <h2>Boost your business with Open</h2>
+    <div></div>
+    <h3>Get your hands on a term loan that’s crafted for your business</h3>
+    <button><span>Get an Open Account</span></button>
+  </div>
+</section>

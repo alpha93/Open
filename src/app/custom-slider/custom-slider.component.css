@@ -1,0 +1,51 @@
+input {
+  appearance: none;
+  background: #dfc4f1;
+  height: 6px;
+  border-radius: 3px;
+  width: 98%;
+  cursor: pointer;
+}
+
+input::-webkit-slider-thumb {
+  background-color: #663399;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-sizing: content-box;
+}
+
+input::-moz-range-thumb {
+  background-color: #663399;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-sizing: content-box;
+}
+
+h3 {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  color: #444;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+
+.selected-value {
+  font-family: "montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin: 0 0 12px 0;
+}
+
+.ranges {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #999;
+  font-family: Montserrat, sans-serif;
+}

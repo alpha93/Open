@@ -1,0 +1,19 @@
+<div
+  class="container"
+  (click)="onToggle($event)"
+  [ngClass]="{
+    'toggle-on-bg': switchState,
+    'toggle-off-bg': !switchState
+  }"
+>
+  <div
+    class="switch"
+    [ngClass]="{
+      'toggle-on-switch': switchState,
+      'toggle-off-switch': !switchState
+    }"
+  ></div>
+</div>
+
+<!-- fxLayout="row"
+[fxLayoutAlign]="positionValue" -->

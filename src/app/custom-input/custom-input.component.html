@@ -1,0 +1,11 @@
+<div class="container">
+  <label [for]="heading">{{ heading }}</label>
+  <input
+    type="number"
+    placeholder="&#8377; 15,000"
+    [id]="heading"
+    #inp
+    (input)="onInput($event)"
+    (blur)="onBlur($event)"
+  />
+</div>

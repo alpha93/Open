@@ -1,0 +1,35 @@
+.container {
+  height: 20px;
+  width: 36px;
+  border-radius: 10px;
+  padding: 2px 2px;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  transition: all 200ms ease-out;
+}
+
+.switch {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 200ms ease-out;
+  position: absolute;
+}
+
+.toggle-on-switch {
+  right: 2px;
+}
+
+.toggle-off-switch {
+  right: 18px;
+}
+
+.toggle-on-bg {
+  background-color: #663399;
+}
+
+.toggle-off-bg {
+  background-color: #aaa;
+}

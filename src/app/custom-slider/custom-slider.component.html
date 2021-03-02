@@ -1,0 +1,22 @@
+<div class="container">
+  <h3>{{ heading }}</h3>
+  <div class="selected-value">&#8377; {{ selectedValue }}</div>
+  <input
+    type="range"
+    [min]="+lowerRange"
+    [max]="+upperRange"
+    steps="1"
+    (input)="onSlide($event, slider)"
+    [value]="lowerRange ? lowerRange : 0"
+    #slider
+  />
+  <div
+    class="ranges"
+    fxLayout="row"
+    fxLayoutAlign="space-between"
+    *ngIf="showRanges"
+  >
+    <div class="lower">&#8377; {{ lowerRange }}</div>
+    <div class="upper">&#8377; {{ upperRange }}</div>
+  </div>
+</div>
