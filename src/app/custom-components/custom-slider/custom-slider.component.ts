@@ -1,5 +1,14 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  Component,
+  ElementRef,
+  forwardRef,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { toUnicode } from 'punycode';
 
 @Component({
   selector: 'open-custom-slider',
@@ -26,6 +35,11 @@ export class CustomSliderComponent implements OnInit, ControlValueAccessor {
   @Input()
   showRanges: boolean = true;
 
+  @ViewChild('slider', { static: true })
+  inputElementRef: ElementRef;
+
+  count: number = 1;
+
   private onChange: (selection: string) => void;
   private onTouched: () => void;
 
@@ -35,8 +49,8 @@ export class CustomSliderComponent implements OnInit, ControlValueAccessor {
     this.selectedValue = this.lowerRange;
   }
 
-  onSlide(event: Event, inputElement: HTMLInputElement) {
-    this.selectedValue = inputElement.value;
+  onSlide(event: Event) {
+    this.selectedValue = this.inputElementRef.nativeElement.value;
 
     const selectionPercentage =
       (100 / (+this.upperRange - +this.lowerRange)) *
@@ -44,7 +58,7 @@ export class CustomSliderComponent implements OnInit, ControlValueAccessor {
 
     const sliderColor = `linear-gradient(to right, #663399 ${selectionPercentage}%, #dfc4f1 ${selectionPercentage}%)`;
 
-    inputElement.style.backgroundImage = sliderColor;
+    this.inputElementRef.nativeElement.style.backgroundImage = sliderColor;
 
     this.onChange(this.selectedValue);
   }
@@ -62,6 +76,7 @@ export class CustomSliderComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(obj: string) {
+    this.inputElementRef.nativeElement.value = obj;
     this.selectedValue = obj;
   }
 
